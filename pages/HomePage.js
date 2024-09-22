@@ -5,11 +5,15 @@ export default function HomePage({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Hello React Native</Text>
+        <Text style={styles.text}>Hello React Native</Text>
         <Button
           title="About Page"
           onPress={() => navigation.navigate("About")}
-        ></Button>
+        />
+        <Button
+          title="List Page"
+          onPress={() => navigation.navigate("List")}
+        />
         <StatusBar style="auto" />
       </View>
     </SafeAreaView>
@@ -22,6 +26,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    // paddingTop: 48,
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 20,
   },
 });

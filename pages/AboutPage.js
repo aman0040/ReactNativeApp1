@@ -11,22 +11,21 @@ import {
 export default function AboutPage({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View>
           <Button
             title="Home Page"
             onPress={() => navigation.navigate("Home")}
-          ></Button>
+          />
+          <Button
+            title="List Page"
+            onPress={() => navigation.navigate("List")}
+          />
           <Image
             source={require("../assets/dog.png")}
-            style={{
-              borderColor: "#eee",
-              borderWidth: 5,
-              width: 300,
-              height: 400,
-            }}
+            style={styles.image}
           />
-          <Text>
+          <Text style={styles.text}>
             Lorem Ipsum: Lorem ipsum dolor sit amet, consectetur adipiscing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -79,8 +78,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-    // paddingTop: 48,
+  },
+  scrollViewContent: {
+    padding: 16,
+  },
+  image: {
+    borderColor: "#eee",
+    borderWidth: 5,
+    width: 300,
+    height: 400,
+    marginVertical: 20,
+    alignSelf: "center",
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign: "justify",
   },
 });
